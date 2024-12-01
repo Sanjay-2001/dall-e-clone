@@ -43,8 +43,8 @@ client/node_modules
 client/.env
 
 # Ignore all files from backend
-backend/node_modules
-backend/.env
+server/node_modules
+server/.env
 
 # Local Netlify folder
 .netlify
