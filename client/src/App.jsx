@@ -22,7 +22,7 @@ function App() {
           <Route path="/" element={<Home toggleTheme={toggleTheme} />} />
           <Route path="/create-post" element={<CreatePost />} />
           <Route path="/gallery" element={<Gallery />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<Contact />} />
         </Routes>
       </div>
     </BrowserRouter>

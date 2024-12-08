@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { logoImage } from "../assets/images";
 import { HiOutlineHome } from "react-icons/hi2";
 import { IoCreateOutline, IoImagesOutline } from "react-icons/io5";
-import { RiMessage3Line } from "react-icons/ri";
+import { BsInfoSquare } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import "../css/Gallery.css";
 import Card from "../components/Card";
@@ -31,7 +31,7 @@ const Gallery = () => {
       setLoading(true);
 
       try {
-        const response = await fetch("http://localhost:8080/api/v1/post", {
+        const response = await fetch("http://192.168.1.6:8080/api/v1/post", {
           method: "GET",
           headers: {
             "Content-Type": "applo",
@@ -166,11 +166,11 @@ const Gallery = () => {
           <div
             className="menu-item-box-common"
             onClick={() => {
-              handleNavigate("/contact");
+              handleNavigate("/about");
             }}
           >
-            <RiMessage3Line className="menu-icon-common " />
-            <div className="menu-item-common">Contact</div>
+            <BsInfoSquare className="menu-icon-common " />
+            <div className="menu-item-common">About</div>
           </div>
         </div>
       </div>

@@ -3,7 +3,7 @@ import "../css/CreatePost.css";
 import { logoImage } from "../assets/images";
 import { HiOutlineHome } from "react-icons/hi2";
 import { IoCreateOutline, IoImagesOutline } from "react-icons/io5";
-import { RiMessage3Line } from "react-icons/ri";
+import { BsInfoSquare } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { previewImg } from "../assets/images";
 import { MdOutlineDownloadForOffline } from "react-icons/md";
@@ -230,10 +230,10 @@ const CreatePost = () => {
           <div
             className="menu-item-box-common"
             onClick={() => {
-              handleNavigate("/contact");
+              handleNavigate("/about");
             }}
           >
-            <RiMessage3Line className="menu-icon-common " />{" "}
+            <BsInfoSquare className="menu-icon-common " />{" "}
             <div className="menu-item-common">Contact</div>
           </div>
         </div>

@@ -12,8 +12,8 @@ import { TbSend2 } from "react-icons/tb";
 
 import { HiOutlineHome } from "react-icons/hi2";
 import { IoCreateOutline, IoImagesOutline } from "react-icons/io5";
-import { RiMessage3Line } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
+import { BsInfoSquare } from "react-icons/bs";
 
 const Home = ({ toggleTheme }) => {
   const navigate = useNavigate();
@@ -139,19 +139,20 @@ const Home = ({ toggleTheme }) => {
             </div>
 
             <div className="menu-item-box">
-              <RiMessage3Line
+              <BsInfoSquare
+                style={{ transform: "scale(0.9)" }}
                 className="menu-icon "
                 onClick={() => {
-                  handleNavigate("/contact");
+                  handleNavigate("/about");
                 }}
               />
               <span
                 className="menu-item "
                 onClick={() => {
-                  handleNavigate("/contact");
+                  handleNavigate("/about");
                 }}
               >
-                Contact
+                About
               </span>
             </div>
           </div>

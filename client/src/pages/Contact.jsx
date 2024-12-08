@@ -1,7 +1,7 @@
 import { logoImage } from "../assets/images";
 import { HiOutlineHome } from "react-icons/hi2";
 import { IoCreateOutline, IoImagesOutline } from "react-icons/io5";
-import { RiMessage3Line } from "react-icons/ri";
+import { BsInfoSquare } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
@@ -59,8 +59,8 @@ const Contact = () => {
           </div>
 
           <div className="menu-item-box-common active-common">
-            <RiMessage3Line className="menu-icon-common " />{" "}
-            <div className="menu-item-common">Contact</div>
+            <BsInfoSquare className="menu-icon-common " />{" "}
+            <div className="menu-item-common">About</div>
           </div>
         </div>
       </div>
