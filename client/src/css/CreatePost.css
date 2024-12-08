@@ -121,13 +121,14 @@
 }
 
 .image-container-box {
-  padding: 0.5em;
+  padding: 0.5em 0.6em;
   border-radius: 1em;
   position: relative;
 }
 
 .preview-image {
   height: 22em;
+  border-radius: 0.5em;
 }
 
 .common-button-body {
