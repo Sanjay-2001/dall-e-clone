@@ -6,6 +6,7 @@ import NodeJs from "./node.png";
 import OpenAI from "./openai.png";
 import ReactJs from "./react.png";
 import Vite from "./vite.png";
+import Gmail from "./gmail.png";
 
 export {
   Cloudinary,
@@ -16,4 +17,5 @@ export {
   OpenAI,
   ReactJs,
   Vite,
+  Gmail,
 };

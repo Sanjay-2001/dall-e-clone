@@ -1,0 +1,100 @@
+.about-body {
+
+    height: 100%;
+
+
+
+}
+
+.about-content {
+
+
+
+    padding: 0 0.5em;
+}
+
+.about-title {
+    margin-top: 2em;
+}
+
+.logo-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin-top: 1em;
+    padding: 0 0.2em;
+}
+
+.about-tec-logo {
+    height: 10em;
+}
+
+.tech-description {
+    text-decoration: none;
+    text-align: center;
+    margin-top: 2em;
+}
+
+.tech-description li {
+    list-style: none;
+    margin-top: 0.4em;
+}
+
+.contact-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 1em;
+    margin-top: 2em;
+
+}
+
+.contact-img {
+    height: 2em;
+    cursor: pointer;
+}
+
+/********************************************************/
+/*************************dark mode**********************/
+/********************************************************/
+.dark .nodejs {
+
+    background-color: rgba(255, 255, 255, 0.336);
+    border-radius: 50%;
+
+
+}
+
+.dark .openai {
+
+    filter: invert(1);
+
+
+}
+
+/********************************************************/
+/*********************media queries**********************/
+/********************************************************/
+@media (max-width: 768px) {
+    .about-title {
+        margin-top: 1.5em;
+    }
+
+    .about-tec-logo {
+        height: 5em;
+    }
+
+    .tech-description {
+        text-align: start;
+
+    }
+
+    .contact-body {
+        margin-top: 5em;
+
+    }
+
+}
