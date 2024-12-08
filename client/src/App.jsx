@@ -19,10 +19,13 @@ function App() {
     <BrowserRouter>
       <div className="app-body">
         <Routes>
-          <Route path="/" element={<Home toggleTheme={toggleTheme} />} />
-          <Route path="/create-post" element={<CreatePost />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/about" element={<Contact />} />
+          <Route
+            path="/"
+            element={<Home toggleTheme={toggleTheme} theme={theme} />}
+          />
+          <Route path="/create-post" element={<CreatePost theme={theme} />} />
+          <Route path="/gallery" element={<Gallery theme={theme} />} />
+          <Route path="/about" element={<Contact theme={theme} />} />
         </Routes>
       </div>
     </BrowserRouter>

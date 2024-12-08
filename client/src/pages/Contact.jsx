@@ -1,10 +1,10 @@
-import { logoImage } from "../assets/images";
+import { logoImage, logoImage2 } from "../assets/images";
 import { HiOutlineHome } from "react-icons/hi2";
 import { IoCreateOutline, IoImagesOutline } from "react-icons/io5";
 import { BsInfoSquare } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 
-const Contact = () => {
+const Contact = ({ theme }) => {
   const navigate = useNavigate();
 
   const handleNavigate = (nav_link) => {
@@ -20,7 +20,11 @@ const Contact = () => {
             handleNavigate("/");
           }}
         >
-          <img src={logoImage} alt="openai" className="logo" />
+          <img
+            src={theme === "light" ? logoImage : logoImage2}
+            alt="openai"
+            className="logo"
+          />
         </div>
       </div>
 

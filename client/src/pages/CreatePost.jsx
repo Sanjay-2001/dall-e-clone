@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../css/CreatePost.css";
-import { logoImage } from "../assets/images";
+import { logoImage, logoImage2 } from "../assets/images";
 import { HiOutlineHome } from "react-icons/hi2";
 import { IoCreateOutline, IoImagesOutline } from "react-icons/io5";
 import { BsInfoSquare } from "react-icons/bs";
@@ -10,7 +10,7 @@ import { MdOutlineDownloadForOffline } from "react-icons/md";
 import { getRandomPrompt } from "../utils";
 import Loading from "../components/Loading";
 
-const CreatePost = () => {
+const CreatePost = ({ theme }) => {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
@@ -96,7 +96,11 @@ const CreatePost = () => {
             handleNavigate("/");
           }}
         >
-          <img src={logoImage} alt="openai" className="logo" />
+          <img
+            src={theme === "light" ? logoImage : logoImage2}
+            alt="openai"
+            className="logo"
+          />
         </div>
       </div>
 

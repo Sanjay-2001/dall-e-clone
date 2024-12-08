@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { logoImage } from "../assets/images";
+import { logoImage, logoImage2 } from "../assets/images";
 import { HiOutlineHome } from "react-icons/hi2";
 import { IoCreateOutline, IoImagesOutline } from "react-icons/io5";
 import { BsInfoSquare } from "react-icons/bs";
@@ -18,7 +18,7 @@ const RenderCards = ({ data, title }) => {
   );
 };
 
-const Gallery = () => {
+const Gallery = ({ theme }) => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [allPosts, setAllPosts] = useState(null);
@@ -31,7 +31,7 @@ const Gallery = () => {
       setLoading(true);
 
       try {
-        const response = await fetch("http://192.168.1.6:8080/api/v1/post", {
+        const response = await fetch("http://localhost:5173/api/v1/post", {
           method: "GET",
           headers: {
             "Content-Type": "applo",
@@ -83,7 +83,11 @@ const Gallery = () => {
             handleNavigate("/");
           }}
         >
-          <img src={logoImage} alt="openai" className="logo" />
+          <img
+            src={theme === "light" ? logoImage : logoImage2}
+            alt="openai"
+            className="logo"
+          />
         </div>
       </div>
 

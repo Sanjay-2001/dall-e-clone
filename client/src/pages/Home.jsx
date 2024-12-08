@@ -3,6 +3,7 @@ import "../css/Home.css";
 import { GiBoomerangSun } from "react-icons/gi";
 import {
   logoImage,
+  logoImage2,
   modelImage,
   profile1,
   profile2,
@@ -15,7 +16,7 @@ import { IoCreateOutline, IoImagesOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import { BsInfoSquare } from "react-icons/bs";
 
-const Home = ({ toggleTheme }) => {
+const Home = ({ toggleTheme, theme }) => {
   const navigate = useNavigate();
   const rightBodyRef = useRef(null);
   const [imageHeight, setImageHeight] = useState(0);
@@ -39,7 +40,11 @@ const Home = ({ toggleTheme }) => {
     <div className="home-body">
       <div className="home-header">
         <div className="image-container">
-          <img src={logoImage} alt="openai" className="logo" />
+          <img
+            src={theme === "light" ? logoImage : logoImage2}
+            alt="dream pixel"
+            className="logo"
+          />
         </div>
       </div>
 

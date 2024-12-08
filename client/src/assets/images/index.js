@@ -4,7 +4,8 @@ import profile3 from "./pf3.jpg";
 import download from "./download.png";
 import modelImage from "./cyborg.jpg";
 import previewImg from "./preview.png";
-import logoImage from "./logo.svg";
+import logoImage from "./logo.png";
+import logoImage2 from "./logo2.png";
 
 export {
   profile1,
@@ -14,4 +15,5 @@ export {
   modelImage,
   previewImg,
   logoImage,
+  logoImage2,
 };
