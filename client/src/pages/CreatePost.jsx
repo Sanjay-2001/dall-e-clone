@@ -177,7 +177,11 @@ const CreatePost = () => {
                   className="preview-image"
                 />
               ) : (
-                <img src={previewImg} alt="preview" className="preview-image" />
+                <img
+                  src={previewImg}
+                  alt="preview"
+                  className="preview-image not-found-image"
+                />
               )}
 
               {generatingImg && (

@@ -294,7 +294,7 @@
   background-color: var(--secondary-color-dark);
 }
 
-.dark .preview-image {
+.dark .not-found-image {
   filter: invert(1);
 }
 
