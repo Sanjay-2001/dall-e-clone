@@ -1,11 +1,18 @@
-import { useNavigate } from "react-router-dom";
-import { preview } from "../assets";
-import { getRandomPrompt } from "../utils";
-import { FormField, Loader } from "../components";
 import { useState } from "react";
+import "../css/CreatePost.css";
+import { logoImage } from "../assets/images";
+import { HiOutlineHome } from "react-icons/hi2";
+import { IoCreateOutline, IoImagesOutline } from "react-icons/io5";
+import { RiMessage3Line } from "react-icons/ri";
+import { useNavigate } from "react-router-dom";
+import { previewImg } from "../assets/images";
+import { MdOutlineDownloadForOffline } from "react-icons/md";
+import { getRandomPrompt } from "../utils";
+import Loading from "../components/Loading";
 
 const CreatePost = () => {
   const navigate = useNavigate();
+
   const [form, setForm] = useState({
     name: "",
     prompt: "",
@@ -76,81 +83,162 @@ const CreatePost = () => {
     }
   };
 
+  const handleNavigate = (nav_link) => {
+    navigate(nav_link);
+  };
+
   return (
-    <section>
-      <div>
-        <h1 className="font-extrabold text-[#222328] text-[32px]">Create</h1>
-        <p className="mt-2 text-[#666e75] text-[16px] max-w-[500px]">
-          Create imaginative and visually stunning images through by DALL-E AI
-          and share them with the community
-        </p>
+    <div className="home-body">
+      <div className="home-header">
+        <div
+          className="image-container"
+          onClick={() => {
+            handleNavigate("/");
+          }}
+        >
+          <img src={logoImage} alt="openai" className="logo" />
+        </div>
       </div>
 
-      <form className="mt-16 max-w-3xl" onSubmit={handleSubmit}>
-        <div className="flex flex-col gap-5">
-          <FormField
-            labelName="Your Name"
-            type="text"
-            name="name"
-            placeholder="Ex., john doe"
-            value={form.name}
-            handleChange={handleChange}
-          />
-
-          <FormField
-            labelName="Prompt"
-            type="text"
-            name="prompt"
-            placeholder="A plush toy robot sitting against a yellow wall"
-            value={form.prompt}
-            handleChange={handleChange}
-            isSurpriseMe
-            handleSurpriseMe={handleSurpriseMe}
-          />
-          <div className="relative bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-64 p-3 h-64 flex justify-center items-center">
-            {form.photo ? (
-              <img
-                src={form.photo}
-                alt={form.prompt}
-                className="w-full h-full object-contain"
-              />
-            ) : (
-              <img
-                src={preview}
-                alt="preview"
-                className="w-9/12 h-9/12 object-contain opacity-40"
-              />
-            )}
-
-            {generatingImg && (
-              <div className="absolute inset-0 z-0 flex justify-center items-center bg-[rgba(0,0,0,0.5)] rounded-lg">
-                <Loader />
+      <div className="common-content">
+        <div className="common-title">Create Post</div>
+        <div className="common-description">
+          Generate stunning AI-powered images with just a few clicks. Explore
+          creativity with unique, AI-generated visuals tailored to your
+          imagination.
+        </div>
+        <div className="middle-content">
+          <div className="middle-content-left">
+            <form className="middle-content-form" onSubmit={handleSubmit}>
+              <div className="common-form-field">
+                <label className="common-label">Your Name</label>
+                <input
+                  className="common-input"
+                  type="text"
+                  placeholder="Ex. John Doe"
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
+                  required
+                />
               </div>
-            )}
+              <div className="common-form-field">
+                <span className="horizontal-form">
+                  <label className="common-label">Prompt</label>
+                  <span
+                    className="surprise-button"
+                    type="button"
+                    onClick={handleSurpriseMe}
+                  >
+                    Surprise Me
+                  </span>
+                </span>
+                <input
+                  className="common-input"
+                  type="text"
+                  name="prompt"
+                  placeholder="Ex. A plush toy robot sitting against a yellow wall"
+                  value={form.prompt}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="common-button-body">
+                <button
+                  type="button"
+                  onClick={generateImage}
+                  className="common-primary-button"
+                >
+                  {generatingImg ? "Generating..." : "Generate"}
+                </button>
+              </div>
+            </form>
+            <div className="middle-footer">
+              <div className="middle-footer-text">
+                Once you have brought your vision to life with the perfect
+                image, share it with the community and inspire others.
+              </div>
+              <div className="footer-button-body">
+                <div className="share-button-main">Share with community</div>
+                <div className="download-button-main">
+                  <MdOutlineDownloadForOffline className="download-icon" />
+                  Download
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="middle-content-right">
+            <div className="image-container-box">
+              {form.photo ? (
+                <img
+                  src={form.photo}
+                  alt={form.prompt}
+                  className="preview-image"
+                />
+              ) : (
+                <img src={previewImg} alt="preview" className="preview-image" />
+              )}
+
+              {generatingImg && (
+                <div className="loader-body">
+                  <Loading />
+                </div>
+              )}
+            </div>
+            <div className="right-button-body">
+              <div className="share-button">Share with community</div>
+              <div className="download-button">
+                <MdOutlineDownloadForOffline className="download-icon" />
+              </div>
+            </div>
           </div>
         </div>
+      </div>
 
-        <div className="mt-5 flex gap-5">
-          <button
-            type="button"
-            onClick={generateImage}
-            className="text-white bg-green-700 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+      <div className="banner-box-common">
+        <div className="menu-box-common">
+          <div
+            className="menu-item-box-common"
+            onClick={() => {
+              handleNavigate("/");
+            }}
           >
-            {generatingImg ? "Generating..." : "Generate"}
-          </button>
-        </div>
+            <HiOutlineHome className="menu-icon-common" />
+            <div className="menu-item-common">Home</div>
+          </div>
 
-        <div className="mt-10">
-          <p className="mt-2 text-[#666e75] text-[14px]">
-            Once you have created the image you want, you can share it with
-            others in the community
-          </p>
-          <button className="mt-3 text-white bg-[#6469ff] font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center">
-            Share with the community
-          </button>
+          <div className="menu-item-box-common active-common">
+            <IoCreateOutline className="menu-icon-common " />
+            <div className="menu-item-common">Create</div>
+          </div>
+
+          <div
+            className="menu-item-box-common"
+            onClick={() => {
+              handleNavigate("/gallery");
+            }}
+          >
+            <IoImagesOutline className="menu-icon-common " />{" "}
+            <div className="menu-item-common">Gallery</div>
+          </div>
+
+          <div
+            className="menu-item-box-common"
+            onClick={() => {
+              handleNavigate("/contact");
+            }}
+          >
+            <RiMessage3Line className="menu-icon-common " />{" "}
+            <div className="menu-item-common">Contact</div>
+          </div>
         </div>
-      </form>
-    </section>
+      </div>
+
+      <div className="footer-common">
+        © 2024 DreamPixel. All Rights Reserved.
+      </div>
+    </div>
   );
 };
 

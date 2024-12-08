@@ -1,0 +1,86 @@
+.card-container {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.card-container:hover {
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.card-hover-content {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #10131f;
+  margin: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  flex-direction: column;
+  max-height: 94.5%;
+  overflow-y: auto;
+}
+
+.card-container:hover .card-hover-content {
+  display: flex;
+}
+
+.card-prompt {
+  color: white;
+  font-size: 1rem;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.card-user {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.user-avatar {
+  width: 1.75rem;
+  height: 1.75rem;
+  background-color: #38a169;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-name {
+  color: white;
+  font-size: 0.875rem;
+}
+
+.card-download-button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.card-download-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
+  filter: invert(1);
+}
